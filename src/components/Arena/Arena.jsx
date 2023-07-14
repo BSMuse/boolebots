@@ -173,9 +173,9 @@ function Arena() {
 			};
 			updateMatrix([]);
 			clearIntervals();
-			setTimeout(() => {
+			// setTimeout(() => {
 				setBots([])
-			}, 400)
+			// }, 400)
 		}
 	}, [gameState])
 

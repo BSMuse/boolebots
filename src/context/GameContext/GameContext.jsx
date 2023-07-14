@@ -38,6 +38,9 @@ const GameProvider = ({ children }) => {
 
 	// Updated checkOutcome to determine if bots are in the same spot and returns id instead of Name.
 	const checkOutcome = (bot1, bot2) => {
+		if (!bot1 || !bot2) {
+			return null;
+		  } 
 		// Determine the earliest timestamp
 		const { rowIndex: rowIndex1, columnIndex: columnIndex1 } = bot1.coordinates;
 		const { rowIndex: rowIndex2, columnIndex: columnIndex2 } = bot2.coordinates;
