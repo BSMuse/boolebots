@@ -21,7 +21,7 @@
     background-color: aqua;
 }
 
-{/* leaderboard and boolean take the same grid-area */}
+/* leaderboard and boolean take the same grid-area */
 .container__leaderboard {
     position: absolute;
     width: 100%; 
@@ -30,7 +30,7 @@
     background-color: rgb(238, 238, 238);
 }
 
-{/* leaderboard and boolean take the same grid-area */}
+/* leaderboard and boolean take the same grid-area */
 .container__boolean {
     position: absolute;
     width: 100%; 

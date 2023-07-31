@@ -5,6 +5,7 @@ import Arena  from './components/Arena/Arena';
 import LeaderBoard from './components/LeaderBoard/LeaderBoard/LeaderBoard'
 import UserConfigBox from './components/UserConfigBox/UserConfigBox';
 import BattleLog from './components/BattleLog/BattleLog';
+import WinnerModal from './components/WinnerModal/WinnerModal';
 import GitIcon from './components/GitIcon/GitIcon';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
 		<div className={ styles["app-container"]}>
 			<GameProvider>
 				<Arena />
+				<WinnerModal />
 				<GitIcon />
 				<LeaderBoard />
 				<UserConfigBox />

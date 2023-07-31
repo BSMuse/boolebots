@@ -14,6 +14,9 @@ const GameProvider = ({ children }) => {
 
 	const [pause, setPause] = useState(false)
 
+	const [winnerBot, setWinnerBot] = useState(null);
+	const [loserBot, setLoserBot] = useState(null);
+
 	// Function to add a new bot (id generated outside)
 	const addBot = (bot) => {
 		const existingBotIndex = bots.findIndex((b) => b.formId === bot.formId);
@@ -80,6 +83,10 @@ const GameProvider = ({ children }) => {
 		setGameState,
 		bots,
 		setBots,
+		winnerBot,
+		setWinnerBot,
+		loserBot,
+		setLoserBot,
 		logsBots, 
 		setLogBots,
 		addBot,

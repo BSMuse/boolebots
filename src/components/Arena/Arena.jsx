@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import styles from './Arena.module.css';
 
 function Arena() {
-	const { bots, setBots, gameState, setGameState, checkOutcome, setLogBots, setPause, pause } = useContext(GameContext);
+	const { bots, setBots, setWinnerBot, setLoserBot, gameState, setGameState, checkOutcome, setLogBots, setPause, pause } = useContext(GameContext);
 	const [matrix, setMatrix] = useState([]);
 	const intervalIdsRef = useRef([]);
 
@@ -140,7 +140,7 @@ function Arena() {
 		const moveBotWithDelay = (bot) => {
 			const intervalId = setInterval(() => {
 				setTimeout(() => moveBot(bot), 500);
-			}, 800 - bot.speed * 2);
+			}, 800 - bot.speed);
 
 			intervalIdsRef.current.push(intervalId);
 		};
@@ -173,7 +173,9 @@ function Arena() {
 			};
 			updateMatrix([]);
 			clearIntervals();
-				setBots([])
+			setWinnerBot(bots.find((bot) => bot.gameStatus === 'winner'));
+    		setLoserBot(bots.find((bot) => bot.gameStatus !== 'winner'));
+			setBots([])
 		}
 	}, [gameState])
 

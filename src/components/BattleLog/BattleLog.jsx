@@ -69,7 +69,7 @@ function BattleLog() {
 		}
 	};
 
-  return window.matchMedia('(max-width: 768px)').matches ? null : (
+  return  (
     <div className={styles.wrapper}>
       <div className={styles.title}>
         <p>Battle Log</p>

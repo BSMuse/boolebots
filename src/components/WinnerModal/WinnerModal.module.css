@@ -1,0 +1,73 @@
+.winModal {
+    display: flex;
+    flex-direction: column;
+    background-image: url("./src/images/podum.png");
+    border: ;
+    padding: 2rem;
+    border-radius: 50px;
+    background-position: -3rem -3rem;
+    background-repeat: no-repeat;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;
+    letter-spacing: 2px;
+} 
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6); 
+    z-index: 999; /* Ensure the WinnerModal appears above other elements */
+  }
+
+.value-container {
+    display: flex;
+}
+
+button {
+    background-color: red;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    text-align: center;
+    margin-top: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(white, transparent);
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  button:hover::before {
+    animation: radiate 1s linear;
+  }
+  
+  @keyframes radiate {
+    to {
+      transform: translate(-50%, -50%) scale(1000);
+      opacity: 0;
+    }
+  }

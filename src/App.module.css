@@ -6,7 +6,7 @@
     flex-flow: column wrap;
     align-items: center;
     justify-content: space-evenly;
-    background-image: url("./images/3.jpg");
+    background-image: url("./images/arena.jpg");
     background-size: cover;
     position: relative;
 }
