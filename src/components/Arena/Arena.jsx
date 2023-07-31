@@ -140,7 +140,7 @@ function Arena() {
 		const moveBotWithDelay = (bot) => {
 			const intervalId = setInterval(() => {
 				setTimeout(() => moveBot(bot), 500);
-			}, 800 - bot.speed);
+			}, 1000 - bot.speed * 5);
 
 			intervalIdsRef.current.push(intervalId);
 		};

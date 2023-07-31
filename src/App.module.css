@@ -8,6 +8,7 @@
     justify-content: space-evenly;
     background-image: url("./images/arena.jpg");
     background-size: cover;
+    background-position: center;
     position: relative;
 }
 

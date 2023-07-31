@@ -22,12 +22,12 @@ function WinnerModal() {
         <div className={styles.overlay}>
             <div className={styles.winModal}>
                 <h1>Winner!</h1>
-                <div className="botContainer">
+                <div className={styles.botContainer}>
                     <img src= {winnerBot.image} alt={winnerBot.name} />
                 </div>
-                <h2>{winnerBot.name} destroyed {loserBot.name}</h2>
+                <h2>{winnerBot.name} destroyed {loserBot.name}!</h2>
                 <h3>Winner Bot Operator: {winnerBot.operator}</h3>
-                <div className="value-container">
+                <div className={styles.valueContainer}>
                     <p>Winner Bot Value: {winnerBot.binaryValue}</p>
                     <p>Loser Bot Value: {loserBot.binaryValue}</p>
                 </div>
