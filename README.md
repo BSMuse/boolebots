@@ -35,7 +35,7 @@ Boole Bots is a game that is not only fun, but also an aid in helping to underst
 This project is a fork of the [Original Repository](https://github.com/chingu-voyages/v44-tier2-team-20)
 
 ### Visuals
-- Visuals generated using Leonardo.AI[Source](https://app.leonardo.ai/) 
+- Visuals generated using [Leonardo.AI](https://app.leonardo.ai/) 
 
 ### Sound Effects
 - Background Music: [Source](https://www.jamendo.com/track/1713766/low-fi-relaxo) 
