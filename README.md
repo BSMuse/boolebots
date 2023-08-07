@@ -31,7 +31,7 @@ Boole Bots is a game that is not only fun, but also an aid in helping to underst
 
 ## Credits
 
-## Forked From
+### Forked From
 This project is a fork of the [Original Repository](https://github.com/chingu-voyages/v44-tier2-team-20)
 
 ### Visuals
