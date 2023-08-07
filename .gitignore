@@ -23,3 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 SKIP_PREFLIGHT_CHECK=true
+# Local Netlify folder
+.netlify
