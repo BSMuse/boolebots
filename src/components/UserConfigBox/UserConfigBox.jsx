@@ -6,6 +6,7 @@ import { GameContext } from '../../context/GameContext/GameContext';
 import Bot from '../../context/GameContext/Bot';
 import styles from './UserConfigBox.module.css';
 import * as images from '../../images/imports';
+import startSound from "../../audio/start-sound.wav"
 
 const imageArray = [
 	images.bot1,
@@ -26,28 +27,35 @@ const UserConfigPanel = () => {
 	const { gameState } = useContext(GameContext);
 	const [matchFound, setMatchFound] = useState(false);
 	const [newBots, setNewBots] = useState([])
+	const [hasPlayedSound, setHasPlayedSound] = useState(false);
 
-	const checkIsReady = () => {
-		if (newBots.length > 1) {
-		const isDuplicateName = newBots.some((bot, index) => {
-			return newBots.findIndex((otherBot, otherIndex) => {
-				return bot.name === otherBot.name && index !== otherIndex;
-				}) !== -1;
-			});
-			
-		if (isDuplicateName) {
-			// Duplicate name found
-			alert('Duplicate bot names found!');
-			return false
-		} else {
-			// no duplicates found
-			return true
-		}
-		} else if (newBots.length == 1) {
-			//not enough bots to start the game
-			return false
-		}
-	}
+const checkIsReady = () => {
+  if (newBots.length > 1) {
+    const isDuplicateName = newBots.some((bot, index) => {
+      return newBots.findIndex((otherBot, otherIndex) => {
+        return bot.name === otherBot.name && index !== otherIndex;
+      }) !== -1;
+    });
+
+    const isDuplicateDirection = newBots.some((bot, index) => {
+      return newBots.findIndex((otherBot, otherIndex) => {
+        return bot.direction === otherBot.direction && index !== otherIndex;
+      }) !== -1;
+    });
+
+    if (isDuplicateDirection || isDuplicateName) {
+      // Duplicate direction or name found
+      alert('Duplicate bot direction or name found!');
+      return false;
+    } else {
+      // no duplicates found
+      return true;
+    }
+  } else if (newBots.length === 1) {
+    // not enough bots to start the game
+    return false;
+  }
+};
 
 	const randomBotImg = () => {
 		const randomImageIndex = Math.floor(Math.random() * imageArray.length);
@@ -69,8 +77,15 @@ const UserConfigPanel = () => {
 			bot.setOperator(el.operation);
 			addBot(bot);
 			}) 
+			setHasPlayedSound(true)
 		}	
 	}, [gameState]);
+
+	useEffect(() => {
+		if (pause === false) {
+		  setHasPlayedSound(false);
+		}
+	  }, [pause]);
 
 	return (
 		<div className={styles.wrapper}>
@@ -90,6 +105,12 @@ const UserConfigPanel = () => {
 				<Button 
 				checkIsReady={checkIsReady} />
 			</OpaqueBackground>
+			{hasPlayedSound && (
+        		<audio autoPlay>
+          			<source src={startSound} type="audio/wav" />
+          			Your browser does not support the audio element.
+        		</audio>
+      )}
 		</div>
 	);
 };

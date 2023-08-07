@@ -9,13 +9,11 @@ const GameProvider = ({ children }) => {
 
 	// State for bots
 	const [bots, setBots] = useState([]);
-
 	const [logsBots, setLogBots] = useState([])
-
 	const [pause, setPause] = useState(false)
-
 	const [winnerBot, setWinnerBot] = useState(null);
 	const [loserBot, setLoserBot] = useState(null);
+	const [operatorUsed, setOperator] = useState(null);
 
 	// Function to add a new bot (id generated outside)
 	const addBot = (bot) => {
@@ -44,18 +42,17 @@ const GameProvider = ({ children }) => {
 		if (!bot1 || !bot2) {
 			return null;
 		  } 
-		// Determine the earliest timestamp
+		// Determine the lastest timestamp
 		const { rowIndex: rowIndex1, columnIndex: columnIndex1 } = bot1.coordinates;
 		const { rowIndex: rowIndex2, columnIndex: columnIndex2 } = bot2.coordinates;
 		if (rowIndex1 === rowIndex2 && columnIndex1 === columnIndex2) {
-			const earliestTimestamp = Math.min(bot1.timestamp, bot2.timestamp);
-
+			const lastestTimestamp = Math.max(bot1.timestamp, bot2.timestamp);
 			//bot1 moved first, it's assigned as firstBot
-			const firstBot = bot1.timestamp === earliestTimestamp ? bot1 : bot2;
+			const firstBot = bot1.timestamp === lastestTimestamp ? bot1 : bot2;
 			//bot1 is assigned to the firstBot, then second bot is bot2
-			const secondBot = bot1.timestamp === earliestTimestamp ? bot2 : bot1;
-
+			const secondBot = bot1.timestamp === lastestTimestamp ? bot2 : bot1;
 			// Calculate the result based on the operator
+			setOperator(firstBot.operator)
 			let result;
 			if (firstBot.operator === 'AND') {
 				result = firstBot.binaryValue && secondBot.binaryValue;
@@ -70,7 +67,7 @@ const GameProvider = ({ children }) => {
 			} else {
 				result = null; //default result
 			}
-
+			console.log(firstBot.name, firstBot.id)
 	return result ? firstBot.id : 'tie';
 		} else {
 			return null;
@@ -87,6 +84,8 @@ const GameProvider = ({ children }) => {
 		setWinnerBot,
 		loserBot,
 		setLoserBot,
+		operatorUsed, 
+		setOperator,
 		logsBots, 
 		setLogBots,
 		addBot,

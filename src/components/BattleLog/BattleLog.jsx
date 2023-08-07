@@ -32,6 +32,7 @@ function BattleLog() {
 				}
 	
 				uniqueLogs.push(bot); // Add the bot to uniqueLogs
+				console.log(uniqueLogs)
 				return true;
 			}).map((bot, index) => {
 				let botResult = '';

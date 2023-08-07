@@ -19,23 +19,23 @@
     2px -2px 0 #000,
     -2px 2px 0 #000,
     2px 2px 0 #000;
+    font-weight: 900;
     letter-spacing: 2px;
 } 
 
 .winModal > h1 {
-  margin-left: 15px;
-  padding-bottom: 40px;
-} 
-
-.winModal > h2 {
-  text-align: center;
-  font-size: 1.10rem;
-  margin-left: 15px;
+  margin-left: 12px;
+  margin-bottom: 30px;
 }
- 
-.winModal > h3 {
+
+.textBox {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   font-size: 0.75rem;
+  margin-top: 10px;
 }
 
 .overlay {
@@ -52,14 +52,13 @@
   }
 
  .valueContainer {
+    text-align: center;
     font-size: 0.75rem ;
-    color: purple;
-    font-weight: 900;
-    text-shadow: none;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 .botContainer {
-margin-bottom: 20px;
+ padding-bottom: 20px;
 }
 
 .winModal > button {
