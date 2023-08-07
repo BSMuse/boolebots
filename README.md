@@ -29,8 +29,23 @@ Boole Bots is a game that is not only fun, but also an aid in helping to underst
 2. Run `npm install` to install the necessary dependencies.
 3. Run `npm start` to start the development server. The game will be available at `http://localhost:3000`.
 
-## Acknowledgements
+## Credits
 
+## Forked From
+This project is a fork of the [Original Repository](https://github.com/chingu-voyages/v44-tier2-team-20)
+
+### Visuals
+- Visuals generated using Leonardo.AI[Source](https://app.leonardo.ai/) 
+
+### Sound Effects
+- Background Music: [Source](https://www.jamendo.com/track/1713766/low-fi-relaxo) 
+- Start Sound: [Source](https://freesound.org/people/Chilljeremy/sounds/395482/) 
+- Bot Crash Sound: [Source](https://freesound.org/people/bubaproducer/sounds/151022/)
+- Wall Crash Sound: [Source](https://freesound.org/people/Scrxbble/sounds/582937/)
+- Victory Sound: [Source](https://freesound.org/people/guillermochicasonido/sounds/691655/)
+
+## Acknowledgements
+-   [George Boole (Wikipedia)](https://en.wikipedia.org/wiki/George_Boole)
 -   [George Boole (Wikipedia)](https://en.wikipedia.org/wiki/George_Boole)
 -   [Boolean Algebra (Wikipedia)](https://en.wikipedia.org/wiki/Boolean_algebra)
 -   [Video Game Physics Tutorial - Part I: An Introduction to Rigid Body Dynamics](https://www.toptal.com/game/video-game-physics-part-i-an-introduction-to-rigid-body-dynamics)
