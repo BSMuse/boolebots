@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build" # Replace with your build command
+  publish = "build"         # Replace with the output directory of your Vite build
+
+[[redirects]]              # Optional: Redirects for SPAs
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build.environment]        # Optional: Environment variables
+  NODE_ENV = "production"
