@@ -48,7 +48,7 @@ function IntroModal() {
     };
   }, []);
 
-  const imageSources = Array.from({ length: 11 }, (_, index) => `/src/images/bot-${index + 1}.png`);
+  const imageSources = Array.from({ length: 11 }, (_, index) => `@images/bot-${index + 1}.png`);
 
   useEffect(() => {
     if (isPlaying) {
