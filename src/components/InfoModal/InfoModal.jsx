@@ -10,7 +10,7 @@ function InfoModal({ isVisible, onClose }) {
     isVisible && (
       <div className={styles.infoContainer}>
         <div className={styles.circle} onClick={closeModal} >
-            <img src="/src/images/close_icon.png" alt={`Info`} onClick={closeModal} />
+            <img src="/close_icon.png" alt={`Info`} onClick={closeModal} />
         </div>
         <div className={styles.textWrapper}>
             <h1>What is BooleBots?</h1>
