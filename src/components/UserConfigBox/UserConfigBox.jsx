@@ -5,21 +5,21 @@ import Button from '../Button/Button';
 import { GameContext } from '../../context/GameContext/GameContext';
 import Bot from '../../context/GameContext/Bot';
 import styles from './UserConfigBox.module.css';
-import * as images from '../../images/imports';
+import * as public from '../../public/imports';
 import startSound from "../../audio/start-sound.wav"
 
 const imageArray = [
-	images.bot1,
-	images.bot2,
-	images.bot3,
-	images.bot4,
-	images.bot5,
-	images.bot6,
-	images.bot7,
-	images.bot8,
-	images.bot9,
-	images.bot10,
-	images.bot11
+	public.bot1,
+	public.bot2,
+	public.bot3,
+	public.bot4,
+	public.bot5,
+	public.bot6,
+	public.bot7,
+	public.bot8,
+	public.bot9,
+	public.bot10,
+	public.bot11
   ];
 
 const UserConfigPanel = () => {
