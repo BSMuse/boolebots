@@ -1,6 +1,7 @@
 [build]
-  command = "npm run build" # Replace with your build command
-  publish = "build"         # Replace with the output directory of your Vite build
+  command = "npm ci && npm run build"
+  publish = "build"
+  node_version = "14"  
 
 [[redirects]]              # Optional: Redirects for SPAs
   from = "/*"
