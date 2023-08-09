@@ -13,7 +13,7 @@
     padding: 1rem 2rem 3rem;
     border-radius: 50px;
     align-items: center;
-    background-image: url("./src/images/introBackground.jpg");
+    background-image: url("/src/images/introBackground.jpg");
     background-position: -315px -360px;
     z-index: 999; /* Ensure the WinnerModal appears above other elements */
 } 
