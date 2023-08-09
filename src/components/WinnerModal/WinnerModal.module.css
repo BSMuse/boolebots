@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     width: 400px;
-    background-image: url("./src/images/podum.png");
+    background-image: url("/src/images/podium.png");
     padding: 2rem;
     border-radius: 50px;
     background-position: -310px center;

@@ -48,7 +48,7 @@ function IntroModal() {
     };
   }, []);
 
-  const imageSources = Array.from({ length: 11 }, (_, index) => `./src/images/bot-${index + 1}.png`);
+  const imageSources = Array.from({ length: 11 }, (_, index) => `/src/images/bot-${index + 1}.png`);
 
   useEffect(() => {
     if (isPlaying) {
@@ -67,7 +67,7 @@ function IntroModal() {
       {visible && (
         <div className={styles.overlay}>
           <div className={styles.introModal}>
-            <img src="./src/images/title.png" alt="Title" className={styles.title} />
+            <img src="/src/images/title.png" alt="Title" className={styles.title} />
             <div className={styles.slidesContainer}>
               {imageSources.map((src, index) => (
                 <div
@@ -82,7 +82,7 @@ function IntroModal() {
             </div>
             <div className={styles.info}>
               <p>What is this game about?</p>
-              <img src="./src/images/info_icon.png" 
+              <img src="/src/images/info_icon.png" 
               alt="Info" 
               onClick={openInfoModal} 
               title="Click me!"
