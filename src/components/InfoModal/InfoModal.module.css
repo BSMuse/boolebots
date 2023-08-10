@@ -6,6 +6,9 @@
 
 .infoContainer {
     position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     width: 400px;
@@ -15,14 +18,11 @@
     align-items: center;
     background-image: url("/images/introBackground.jpg");
     background-position: -315px -360px;
-    z-index: 999; /* Ensure the WinnerModal appears above other elements */
-} 
+    z-index: 999; /* Ensure the infoContainer appears above other elements */
+    justify-content: space-around; /* Vertically centers content */
+  }
+  
 
-@media screen and (max-width: 600px) {
-    .infoContainer {
-        margin-bottom: 188px; /* Allow the height to adjust based on content */
-    }
-}
 
 .circle {
     display: flex;

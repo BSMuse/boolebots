@@ -27,8 +27,16 @@
 
   .title {
     position: absolute;
-    top: 685px;
-  }
+    top: 71%;
+  } 
+
+  @media only screen 
+  and (max-width: 767px)
+  and (orientation: portrait){ 
+    .title {
+      top: 76%;
+    }
+}
 
   .introModal > img {
     width: 350px;
