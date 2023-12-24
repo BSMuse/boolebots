@@ -44,7 +44,7 @@ function IntroModal() {
     showSlides();
 
     return () => {
-      clearTimeout(timeoutId.current); // Clean up the timeout when the component is unmounted or re-rendered
+      clearTimeout(timeoutId.current);
     };
   }, []);
 
@@ -80,6 +80,24 @@ function IntroModal() {
                 </div>
               ))}
             </div>
+            <div className={styles.formContainer}>
+              <input 
+                type="email" 
+                id="email" 
+                placeholder="Enter your email address" 
+                // value={email} 
+                // onChange={handleEmailChange} 
+              />
+              <input 
+                type="password" 
+                id="password" 
+                placeholder="Enter your password" 
+                // value={password} 
+                // onChange={handlePasswordChange} 
+              />
+              <button type="button" onClick={null} >Log In</button>
+              <button type="button" onClick={null} >Sign Up</button>
+            </div>
             <div className={styles.info}>
               <p>What is this game about?</p>
               <img src="/info_icon.png" 
@@ -88,7 +106,6 @@ function IntroModal() {
               title="Click me!"
               />
             </div>
-            <button onClick={closeModal}>Ready to Play?</button>
           </div>
         </div>
       )}

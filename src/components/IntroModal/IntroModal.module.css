@@ -34,7 +34,7 @@
   and (max-width: 767px)
   and (orientation: portrait){ 
     .title {
-      top: 76%;
+      top: 81%;
     }
 }
 
@@ -90,8 +90,7 @@
   
   .info {
     display: flex;
-    font-size: 0.75rem;
-    margin-top: 70px;
+    font-size: 0.75rem; 
     margin-left: 10px;
   }
 
@@ -118,3 +117,9 @@
     position: relative;
     overflow: hidden;
   } 
+
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
