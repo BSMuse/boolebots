@@ -18,13 +18,13 @@
     align-items: center;
     background-image: url("/images/introBackground.jpg");
     background-position: -315px -360px;
-    z-index: 999; /* Ensure the infoContainer appears above other elements */
-    justify-content: space-around; /* Vertically centers content */
+    z-index: 999; 
+    justify-content: space-around; 
   }
   
 
 
-.circle {
+.closeBtn {
     display: flex;
     align-self: self-end;
     align-items: center;
@@ -32,9 +32,10 @@
     border-radius: 100px;
     background-color: red;
     margin-bottom: 5px;
+    cursor: pointer;
 }
 
-.circle > img {
+.closeBtn > img {
     width: 40%;
     align-self: center;
     margin: 10px 5px;        

@@ -9,7 +9,7 @@ function InfoModal({ isVisible, onClose }) {
   return (
     isVisible && (
       <div className={styles.infoContainer}>
-        <div className={styles.circle} onClick={closeModal} >
+        <div className={styles.closeBtn} onClick={closeModal} >
             <img src="/close_icon.png" alt={`Info`} onClick={closeModal} />
         </div>
         <div className={styles.textWrapper}>

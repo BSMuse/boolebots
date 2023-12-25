@@ -6,6 +6,7 @@ import backgroundMusic from "../../audio/Low-fi_Relaxo_-_Drhapso.mp3"
 function IntroModal() {
   const [visible, changeVisibility] = useState(false);
   const [infoModalVisible, setInfoModalVisible] = useState(false);
+  const [signingIn, setSigningIn] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const slidesRef = useRef([]);
   let slideIndex = 0;
@@ -48,7 +49,7 @@ function IntroModal() {
     };
   }, []);
 
-  const publicources = Array.from({ length: 11 }, (_, index) => `/bot-${index + 1}.png`);
+  const botsImageArray = Array.from({ length: 11 }, (_, index) => `/bot-${index + 1}.png`);
 
   useEffect(() => {
     if (isPlaying) {
@@ -67,9 +68,11 @@ function IntroModal() {
       {visible && (
         <div className={styles.overlay}>
           <div className={styles.introModal}>
-            <img src="/title.png" alt="Title" className={styles.title} />
+            <div className={styles.titleContainer}>
+              <img src="/title.png" alt="Title" className={styles.title} />
+            </div>
             <div className={styles.slidesContainer}>
-              {publicources.map((src, index) => (
+              {botsImageArray.map((src, index) => (
                 <div
                   key={index}
                   ref={el => slidesRef.current[index] = el}
@@ -79,34 +82,38 @@ function IntroModal() {
                   <img src={src} alt={`Image ${index + 1}`} />
                 </div>
               ))}
-            </div>
+            </div>{
             <div className={styles.formContainer}>
               <input 
                 type="email" 
                 id="email" 
-                placeholder="Enter your email address" 
+                placeholder="Email address" 
                 // value={email} 
                 // onChange={handleEmailChange} 
               />
               <input 
                 type="password" 
                 id="password" 
-                placeholder="Enter your password" 
+                placeholder="Password" 
                 // value={password} 
                 // onChange={handlePasswordChange} 
               />
               <button type="button" onClick={null} >Log In</button>
               <button type="button" onClick={null} >Sign Up</button>
-            </div>
+            </div>}
             <div className={styles.info}>
-              <p>What is this game about?</p>
+              <p
+                onClick={openInfoModal} 
+                title="Click me!">
+                  What is this game about?
+              </p>
               <img src="/info_icon.png" 
               alt="Info" 
               onClick={openInfoModal} 
               title="Click me!"
               />
             </div>
-          </div>
+          </div> 
         </div>
       )}
       {infoModalVisible && <InfoModal isVisible={infoModalVisible} onClose={closeInfoModal}  />}

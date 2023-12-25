@@ -26,8 +26,7 @@
   } 
 
   .title {
-    position: absolute;
-    top: 71%;
+    width: 20rem;
   } 
 
   @media only screen 
@@ -67,7 +66,7 @@
     } 
 
     .mySlides {
-        margin-top: 80px;
+      margin-bottom: 1vh;
     } 
 
     .slideVisible {
@@ -91,7 +90,9 @@
   .info {
     display: flex;
     font-size: 0.75rem; 
-    margin-left: 10px;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
   }
 
   .info > p {
@@ -106,20 +107,33 @@
     width: 20px;
     margin-left: 0.5rem;
   }
-  
-  .introModal > button {
-    background-color: red;
-    color: white;
-    font-size: 1.5rem;
-    padding: 0.5rem;
-    margin-top: 10px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  } 
 
   .formContainer {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  .formContainer > button {
+    background-color: red;
+    color: white;
+    font-weight: 700;
+    font-family: inherit;
+    padding: 0.15em;
+    cursor: pointer;
+  }
+
+  .formContainer > button:hover{
+    filter: brightness(1.5);
+  }
+
+  .formContainer > input {
+    border-radius: 8pxs;
+    background-color: azure;
+    padding: 0.15rem;
+  }
+
+  .titleContainer {
+    height: 20vh;
+    width: 100%;
   }
