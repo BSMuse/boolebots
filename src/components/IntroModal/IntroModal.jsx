@@ -6,15 +6,45 @@ import backgroundMusic from "../../audio/Low-fi_Relaxo_-_Drhapso.mp3"
 function IntroModal() {
   const [visible, changeVisibility] = useState(false);
   const [infoModalVisible, setInfoModalVisible] = useState(false);
-  const [signingIn, setSigningIn] = useState(false);
+  const [userDetails, changeDetails] = useState({
+    email: null, 
+    password: null
+  })
   const [isPlaying, setIsPlaying] = useState(false);
   const slidesRef = useRef([]);
   let slideIndex = 0;
-  let timeoutId = useRef(null); // Use useRef to hold the timeoutId
+  let timeoutId = useRef(null); 
+
+  const handleEmailChange = (event) => {
+    changeDetails(prevState => ({...prevState, email: event.target.value}) )
+  }
+
+  const handlePasswordChange = (event) => {
+    changeDetails(prevState => ({...prevState, password: event.target.value}) )
+  }
+
+  const isFormValid = () => {
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const emailIsValid = userDetails.email && emailRegex.test(userDetails.email);
+    const passwordIsValid = userDetails.password && userDetails.password.length >= 8;
+    return emailIsValid && passwordIsValid;
+  };
+  
+  
 
   const closeModal = () => {
     changeVisibility(false);
     setIsPlaying(true);
+  }
+
+  const handleSignUp = () => {
+    console.log('email:', userDetails.email, 'password:', userDetails.password)
+    isFormValid() ? closeModal() : alert('Email and Password id not valid.')
+  }
+
+  const handleLogin = () => {
+    console.log('email:', userDetails.email, 'password:', userDetails.password)
+    isFormValid() ? closeModal() : alert('Not user account for these details.')
   }
 
   const openInfoModal = () => {
@@ -88,18 +118,18 @@ function IntroModal() {
                 type="email" 
                 id="email" 
                 placeholder="Email address" 
-                // value={email} 
-                // onChange={handleEmailChange} 
+                value={userDetails.email || ''} 
+                onChange={handleEmailChange} 
               />
               <input 
                 type="password" 
                 id="password" 
                 placeholder="Password" 
-                // value={password} 
-                // onChange={handlePasswordChange} 
+                value={userDetails.password || ''} 
+                onChange={handlePasswordChange} 
               />
-              <button type="button" onClick={null} >Log In</button>
-              <button type="button" onClick={null} >Sign Up</button>
+              <button type="button" onClick={handleLogin} >Log In</button>
+              <button type="button" onClick={handleSignUp} >Sign Up</button>
             </div>}
             <div className={styles.info}>
               <p
