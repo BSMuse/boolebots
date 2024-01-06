@@ -1,11 +1,11 @@
 import { v4 as uuidv4 } from 'uuid';
 
 class Bot {
-	constructor(name, image, binaryValue, operator, speed, direction, gameStatus, formId) {
+	constructor(name, image, color, binaryValue, operator, speed, direction, gameStatus, formId) {
 		this.id = uuidv4();
 		this.name = name;
 		this.image = image;
-		this.labelColor = this.setLabelColor();
+		this.color = color;
 		this.binaryValue = binaryValue;
 		this.operator = operator;
 		this.direction = direction;
@@ -34,13 +34,19 @@ class Bot {
 		this.image = image;
 	}
 
-	// Creates random color for bot label
-	setLabelColor() {
-		var r = Math.floor(Math.random() * 256);
-		var g = Math.floor(Math.random() * 256);
-		var b = Math.floor(Math.random() * 256);
-
-		return `rgba(${r}, ${g}, ${b}, 0.5)`;
+	// Method to update color
+	setColor(color) { 
+		function hexToRgb(hex) {
+			hex = hex.replace(/^#/, '');
+			let bigint = parseInt(hex, 16);
+			let r = (bigint >> 16) & 255;
+			let g = (bigint >> 8) & 255;
+			let b = bigint & 255;
+	
+			return `rgb(${r}, ${g}, ${b}, 0.7)`;
+	}
+	
+		this.color = hexToRgb(color)
 	}
 
 	// Method to set binary value

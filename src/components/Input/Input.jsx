@@ -1,27 +1,36 @@
 import React, { useState, useContext, useEffect } from 'react';
 import styles from './Input.module.css';
 import { GameContext } from '../../context/GameContext/GameContext';
+import ColorPicker from '../ColorPicker/ColorPicker';
 
-const Input = ({ label, value, onChange, setMatchFound }) => {
-	const { bots } = useContext(GameContext);
-	
+const Input = (props) => {
+	const { userBots } = useContext(GameContext);
+	const userBotNames = userBots.map((bot) => bot.name.toLowerCase())
 
-	const handleInputChange = (event) => {
-		onChange(event.target.value);
+	const handleInputChange = (event) => { 
+		const inputValue = event.target.value; 
+		if(inputValue.length > 13) {
+			alert('Name is too long! Try something shorter.')
+		} else if (userBotNames.includes(inputValue.toLowerCase()) ){
+			alert('Name exists! Try another.')
+		} else {
+			props.onChange(inputValue);
+		}
 	};
 
-	useEffect(() => {
-		const botNames = bots.map((bot) => bot.name);
-		const nameCount = botNames.filter((botName) => botName === value).length;
-		setMatchFound(nameCount > 1);
-	}, [value, bots]);
+	// useEffect(() => {
+	// 	const botNames = bots.map((bot) => bot.name);
+	// 	const nameCount = botNames.filter((botName) => botName === value).length;
+	// 	// setMatchFound(nameCount > 1);
+	// }, [value, bots]);
 
 	return (
 		<div>
 			<label htmlFor="input" className={styles.label}>
-				{label}
+				<p>Name</p>
+				<ColorPicker label="Color" value={props.color} onChange={props.setColor} />
 			</label>
-			<input className={styles.input} name="input" type="text" value={value} onChange={handleInputChange} required />
+			<input className={styles.input} name="input" type="text" value={props.value} onChange={handleInputChange} required />
 		</div>
 	);
 };

@@ -5,12 +5,12 @@ import { GameContext } from '../../../context/GameContext/GameContext';
 import OpaqueBackground from '../../OpaqueBackground/OpaqueBackground';
 
 const LeaderBoard = () => {
-  const { bots } = useContext(GameContext);
+  const { bots, userBots } = useContext(GameContext);
   const [uniqueBots, setUniqueBots] = useState([])
 
   useEffect(() => {
-    console.log(uniqueBots)
-  }, [uniqueBots])
+    setUniqueBots(userBots)
+  }, [])
 
   const storeBot = () => {
     bots.forEach(bot => {

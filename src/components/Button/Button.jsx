@@ -4,11 +4,11 @@ import { GameContext } from '../../context/GameContext/GameContext';
 import styles from './Button.module.css';
 
 const Button = ({ onClick, width, height, fontSize, checkIsReady }) => {
-	const { gameState, setGameState } = useContext(GameContext);
+	const { gameState, setGameState, bots } = useContext(GameContext);
 
 	function handleClick() {
 		// Adding in internal functionality to the button
-		checkIsReady() ? setGameState(!gameState) : console.log('not ready')
+		bots.length > 1 ? setGameState(!gameState) : console.log('not ready')
 		if (onClick) {
 			// Adding in outside functionality to the button
 			onClick();

@@ -4,66 +4,20 @@ import Input from '../Input/Input';
 import Slider from '../Slider/Slider';
 import Dropdown from '../Dropdown/Dropdown';
 
-const UserSelection = ({ formId, setNewBots, setMatchFound, matchFound }) => {
-	const [name, setName] = useState('');
-	const [speed, setSpeed] = useState(50);
-	const [value, setValue] = useState(null);
-	const [direction, setDirection] = useState(null);
-	const [operation, setOperation] = useState(null);
-	const [isFormComplete, setIsFormComplete] = useState(false);
-	
- 
-	useEffect(() => {
-		if (name && speed && value !== null && direction && operation) {
-			setIsFormComplete(true);
-		} else {
-			setIsFormComplete(false);
-		}
-	}, [name, speed, value, direction, operation]);
+// const UserSelection = ({ formId, setNewBots, setMatchFound, matchFound })
 
-	useEffect(() => {
-		if (isFormComplete) {
-		const bot = {
-				name: name,
-				speed: speed,
-				value: value,
-				direction: direction,
-				operation: operation,
-				formId: formId,
-		};
-
-		setNewBots((prevBots) => {
-			const updatedBots = prevBots.map((existingBot) => {
-				if (existingBot.formId === bot.formId ) {
-				// Update the existing bot's properties
-				return bot;
-				}
-			return existingBot; // Keep other bots as they are
-			});
-	
-			if (updatedBots.some((existingBot) => existingBot.formId === bot.formId)) {
-				 // Bot exists, update the state
-			return updatedBots;
-			} else {
-			  // Bot doesn't exist, add it to the array
-			return [...updatedBots, bot];
-			}
-		});
-		}
-	  }, [isFormComplete, speed, direction, operation, value, name]);	  
-
+const UserSelection = (props) => {
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.container}>
 				<div>
-					<Input label="Name" value={name} onChange={setName} 
-					setMatchFound={setMatchFound} matchFound={matchFound} />
-					<Slider label="Speed" value={speed} onChange={setSpeed} />
+					<Input label="Name" value={props.name} onChange={props.setName} color={props.color} setColor={props.setColor} />
+					<Slider label="Speed" value={props.speed} onChange={props.setSpeed} />
 				</div>
 				<div className={styles.dropdownContainer}>
-					<Dropdown label="Value" options={[0, 1]} value={value} onChange={setValue} />
-					<Dropdown label="Direction" options={['North', 'South', 'East', 'West']} value={direction} onChange={setDirection} />
-					<Dropdown label="Operation" options={['AND', 'OR', 'NOR', 'XOR']} value={operation} onChange={setOperation} />
+					<Dropdown label="Value" options={[0, 1]} value={props.value} onChange={props.setValue} />
+					<Dropdown label="Direction" options={['North', 'South', 'East', 'West']} value={props.direction} onChange={props.setDirection} />
+					<Dropdown label="Operation" options={['AND', 'OR', 'NOR', 'XOR']} value={props.operator} onChange={props.setOperator} />
 				</div>
 			</div>
 		</div>

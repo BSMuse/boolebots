@@ -38,11 +38,18 @@
 
 .bot-label {
   position: absolute;
-  font-weight: 900;
-  padding: 0.5rem 2rem;
-  top: -2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  width: 7.5vh;
+  height: 4.25vh; 
+  top: -50%;
   left: 50%;
   transform: translateX(-50%);
+  border-radius: 8px;
 }
 
 .bot-image {
@@ -57,6 +64,12 @@ and (max-width: 768px) {
   .cell {
     height: 50px;
     width: 50px;
+  } 
+  .bot-label {
+    font-size: 0.5rem;
+    width: 7.5vh;
+    height: 4.25vh; 
+    top: -50%;
   }
 }
 
@@ -68,6 +81,12 @@ and (max-width: 768px) {
     .cell {
       height: 45px;
       width: 45px;
+    } 
+    .bot-label {
+      font-size: 0.5rem;
+      width: 7.5vh;
+      height: 4.25vh; 
+      top: -50%;
     }
 }
 
@@ -76,6 +95,11 @@ and (max-width: 768px) {
   .cell {
     height: 40px;
     width: 40px;
+  } 
+  .bot-label {
+    font-size: 0.5rem;
+    width: 4.5vh;
+    height: 2.5vh; 
   }
 }
 

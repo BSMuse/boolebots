@@ -8,6 +8,8 @@ import BattleLog from './components/BattleLog/BattleLog';
 import WinnerModal from './components/WinnerModal/WinnerModal';
 import GitIcon from './components/GitIcon/GitIcon';
 import IntroModalWrapper from './components/IntroModal/IntroModalWrapper';
+import BotSelectModal from './components/BotSelectModal/BotSelectModal';
+// import BotConfigBox from './components/BotConfigBox/BotConfigBox';
 
 function App() {
 	return (
@@ -20,6 +22,8 @@ function App() {
 				<LeaderBoard />
 				<UserConfigBox />
 				<BattleLog />
+				<BotSelectModal/>
+				{/* <BotConfigBox /> */}
 			</GameProvider>
 		</div>
 	);

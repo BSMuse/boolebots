@@ -67,7 +67,7 @@ function IntroModal() {
       slideIndex = 0;
     }
 
-    timeoutId.current = setTimeout(showSlides, 3000); // Save the timeoutId to the ref
+    timeoutId.current = setTimeout(showSlides, 3000); 
   } 
 
   useEffect(() => {

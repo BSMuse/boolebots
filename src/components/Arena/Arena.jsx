@@ -155,7 +155,7 @@ function Arena() {
 			const { rowIndex, columnIndex } = bot.coordinates;
 			updatedMatrix[rowIndex][columnIndex] = (
 				<div className={styles['bot-container']}>
-					<p className={styles['bot-label']} style={{ backgroundColor: bot.labelColor }}>
+					<p className={styles['bot-label']} style={{ backgroundColor: bot.color }}>
 						{bot.name}
 					</p>
 					<img src={bot.image} alt={bot.name} className={styles['bot-image']} />

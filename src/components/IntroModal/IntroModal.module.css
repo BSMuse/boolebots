@@ -9,7 +9,7 @@
       flex-direction: column;
       width: 400px;
       height: 500px;
-      background-image: url("/images/introBackground.jpg");
+      background-image: url("/intro-background.jpg");
       padding: 2rem;
       border-radius: 50px;
       background-position: -315px -360px;
@@ -62,11 +62,11 @@
       justify-content: center;
       align-items: center;
       background-color: rgba(0, 0, 0, 0.6); 
-      z-index: 998; /* Ensure the WinnerModal appears above other elements */
+      z-index: 998; 
     } 
 
     .mySlides {
-      margin-bottom: 1vh;
+      margin-bottom: 1.5vh;
     } 
 
     .slideVisible {

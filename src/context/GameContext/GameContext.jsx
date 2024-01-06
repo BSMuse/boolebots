@@ -13,7 +13,36 @@ const GameProvider = ({ children }) => {
 	const [pause, setPause] = useState(false)
 	const [winnerBot, setWinnerBot] = useState(null);
 	const [loserBot, setLoserBot] = useState(null);
-	const [operatorUsed, setOperator] = useState(null);
+	const [operatorUsed, setOperator] = useState(null); 
+  const [userBots, setUserBots] = useState([
+    {
+      name: 'Speedy Win',
+      speed: 100,
+      value: 1,
+      direction: 'North',
+      operator: 'AND',
+      color: '#FF3B30',
+      image_id: 2,
+			bot_id: 1,
+			user_id: null,
+			wins: 0,
+			losses: 0,
+			is_active: false,
+    }, 
+    {    
+    name: 'Sluggish Lose',
+    speed: 1,
+    value: 1,
+    direction: 'South',
+    operator: 'AND',
+    color: '#48b47e',
+    image_id: 1,
+		bot_id: 2,
+		user_id: null,
+		wins: 0,
+		losses: 0,
+		is_active: false,
+  }])
 
 	// Function to add a new bot (id generated outside)
 	const addBot = (bot) => {
@@ -78,8 +107,10 @@ const GameProvider = ({ children }) => {
 	const contextValue = {
 		gameState,
 		setGameState,
+		userBots, 
+		setUserBots,
 		bots,
-		setBots,
+		setBots, 
 		winnerBot,
 		setWinnerBot,
 		loserBot,

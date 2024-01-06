@@ -16,7 +16,7 @@
     padding: 1rem 2rem 3rem;
     border-radius: 50px;
     align-items: center;
-    background-image: url("/images/introBackground.jpg");
+    background-image: url("/intro-background.jpg");
     background-position: -315px -360px;
     z-index: 999; 
     justify-content: space-around; 
