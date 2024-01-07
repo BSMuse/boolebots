@@ -30,7 +30,7 @@ const GameProvider = ({ children }) => {
 			is_active: false,
     }, 
     {    
-    name: 'Sluggish Lose',
+    name: 'Lazy Lose',
     speed: 1,
     value: 1,
     direction: 'South',

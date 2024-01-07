@@ -9,7 +9,7 @@ const Input = (props) => {
 
 	const handleInputChange = (event) => { 
 		const inputValue = event.target.value; 
-		if(inputValue.length > 13) {
+		if(inputValue.length > 9) {
 			alert('Name is too long! Try something shorter.')
 		} else if (userBotNames.includes(inputValue.toLowerCase()) ){
 			alert('Name exists! Try another.')
@@ -17,12 +17,6 @@ const Input = (props) => {
 			props.onChange(inputValue);
 		}
 	};
-
-	// useEffect(() => {
-	// 	const botNames = bots.map((bot) => bot.name);
-	// 	const nameCount = botNames.filter((botName) => botName === value).length;
-	// 	// setMatchFound(nameCount > 1);
-	// }, [value, bots]);
 
 	return (
 		<div>
