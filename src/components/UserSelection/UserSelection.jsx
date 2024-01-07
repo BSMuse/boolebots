@@ -4,8 +4,6 @@ import Input from '../Input/Input';
 import Slider from '../Slider/Slider';
 import Dropdown from '../Dropdown/Dropdown';
 
-// const UserSelection = ({ formId, setNewBots, setMatchFound, matchFound })
-
 const UserSelection = (props) => {
 	return (
 		<div className={styles.wrapper}>
